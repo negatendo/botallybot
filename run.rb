@@ -17,7 +17,7 @@ bot = Cinch::Bot.new do
   configure do |c|
     c.server = "irc.freenode.org"
     c.nick  = 'botallybot'
-    c.channels = ["#botallytest"]
+    c.channels = ["#botally"]
 
     c.plugins.plugins = [ 
       Cinch::Plugins::TwitterStatus,
