@@ -3,21 +3,15 @@
 require 'cinch'
 require 'cinch-twitterstatus'
 
-#updog plugin - !updog
-class Updog
-  include Cinch::Plugin
-  match /updog/, method: :whats_updog
-  def whats_updog(m)
-    m.reply "What's updog, #{m.user.nick}?"
-  end
-end
+#load plugins
+require_relative 'plugins/updog.rb'
 
 #here's the bot
 bot = Cinch::Bot.new do
   configure do |c|
     c.server = "irc.freenode.org"
     c.nick  = 'botallybot'
-    c.channels = ["#botally"]
+    c.channels = ["#botallytest"]
 
     c.plugins.plugins = [ 
       Cinch::Plugins::TwitterStatus,
