@@ -4,7 +4,7 @@ require 'cinch'
 require 'cinch-twitterstatus'
 
 #load plugins
-require_relative 'plugins/updog.rb'
+require_relative 'plugins/updog'
 
 #here's the bot
 bot = Cinch::Bot.new do
@@ -15,7 +15,7 @@ bot = Cinch::Bot.new do
 
     c.plugins.plugins = [ 
       Cinch::Plugins::TwitterStatus,
-      Updog
+      Cinch::Updog,
     ]
 
     #needed to look up tweets
